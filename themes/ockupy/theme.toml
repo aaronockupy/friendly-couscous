@@ -1,0 +1,8 @@
+name = "Ockupy"
+license = "MIT"
+description = "Ockupy"
+homepage = "https://supersweetsites.com"
+min_version = 0.1
+
+[author]
+  name = "Aaron"
