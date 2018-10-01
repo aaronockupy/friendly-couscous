@@ -1,40 +1,50 @@
 <!doctype html>
 <html>
-  <head>
-    {{ partial "pixels" . }}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="{{ .Permalink }}">
 
-    <title>
-      {{ block "title" . }}
-        {{ .Title}}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}
-      {{ end }}
-    </title>
+<head>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/css/particles.css">
-<link rel="stylesheet" href="/css/style.css">
-    {{ if .RSSLink }}
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
-  </head>
+  {{ partial "pixels" . }}
+
+  <html prefix="og: http://ogp.me/ns#">
+  <title>
+    {{ block "title" . }} {{ .Title}}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }} {{ end }}
+  </title>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ockupy" />
+  <meta name="twitter:title" content="Ockupy - BaaS Marketing" />
+  <meta name="twitter:description" content="Content Marketing for Blockchain as as Service platforms and cryptocurriences." />
+  <meta name="twitter:image" content="/img/twitter-card.png" />
+  <meta name="description" content="Content Marketing for Blockchain as as Service platforms and cryptocurriences. We offer brand services, programmatic advertising, and original content creation to blockchain companies in all stages.">
+  <meta property="og:title" content="{{ block " title " . }}
+      {{ .Title}}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}
+    {{ end }}" />
+  <meta property="og:description" content="Content Marketing for Blockchain as as Service platforms and cryptocurriences. We offer brand services, programmatic advertising, and original content creation to blockchain companies in all stages.">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="/img/logo.png" />
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="/css/particles.css">
+  <link rel="stylesheet" href="/css/style.css"> {{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" /> {{ end }}
+</head>
 
 <body>
-          <div id="particles-js"></div>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN5JRC8"
+  <div id="particles-js"></div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN5JRC8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    {{ block "header" . }}
-      {{ partial "header" . }}
-    {{ end }}
-      <main>
-          {{ block "body" . }}
-                {{ block "main" . }}
-                {{ end }}
-          {{ end }}
-      </main>
-      {{ partial "scripts.html" . }}
-  </body>
+  <!-- End Google Tag Manager (noscript) -->
+  {{ block "header" . }} {{ partial "header" . }} {{ end }}
+  <main>
+    {{ block "body" . }} {{ block "main" . }} {{ end }} {{ end }}
+  </main>
+  {{ partial "scripts.html" . }}
+</body>
+
 </html>
