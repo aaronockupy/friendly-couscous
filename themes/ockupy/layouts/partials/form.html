@@ -13,8 +13,10 @@
     </div>
     <div class="form-group col-md-6">
       <select class="form-control custom-select" name="role[]">
-        <option value="brand" selected>I am/represent a brand</option>
-        <option value="broadcaster">I am/represent a broadcaster</option>
+        <option value="brand" selected>I am in ICO</option>
+        <option value="broadcaster">I am a BaaS Business</option>
+        <option value="brand">I am a Cryptocurrency</option>
+        <option value="broadcaster">I am an Exchange</option>
       </select>
     </div>
   </div>
@@ -25,10 +27,4 @@
 </form>
 <script type="text/javascript">
   mixpanel.track_forms('#contact-form', 'Contact Submission');
-  mixpanel.identify("12148");
-  mixpanel.people.set({
-    "$name": "John Smith",
-    "$email": "jsmith@example.com",
-    "$created": "2011-03-16 16:53:54"
-});
 </script>
