@@ -22,7 +22,13 @@
     <textarea class="form-control" id="Message" name="message" placeholder="Short message" rows="3"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+</form>
 <script type="text/javascript">
   mixpanel.track_forms('#contact-form', 'Contact Submission');
+  mixpanel.identify("12148");
+  mixpanel.people.set({
+    "$name": "John Smith",
+    "$email": "jsmith@example.com",
+    "$created": "2011-03-16 16:53:54"
+});
 </script>
