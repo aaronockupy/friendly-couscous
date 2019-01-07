@@ -2,3 +2,6 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Ockupy"
 theme = "ockupy"
+
+[params]
+  description = "Start marketing with Twitch's most watched broadcasters."
